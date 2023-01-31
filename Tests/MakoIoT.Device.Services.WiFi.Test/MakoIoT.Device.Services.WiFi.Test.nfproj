@@ -30,19 +30,19 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MakoIoT.Device.Services.Interface">
-      <HintPath>..\packages\MakoIoT.Device.Services.Interface.1.0.23.51280\lib\MakoIoT.Device.Services.Interface.dll</HintPath>
+      <HintPath>..\..\packages\MakoIoT.Device.Services.Interface.1.0.23.51280\lib\MakoIoT.Device.Services.Interface.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
-      <HintPath>..\packages\nanoFramework.CoreLibrary.1.14.2\lib\mscorlib.dll</HintPath>
+      <HintPath>..\..\packages\nanoFramework.CoreLibrary.1.14.2\lib\mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.DependencyInjection">
-      <HintPath>..\packages\nanoFramework.DependencyInjection.1.0.22\lib\nanoFramework.DependencyInjection.dll</HintPath>
+      <HintPath>..\..\packages\nanoFramework.DependencyInjection.1.0.22\lib\nanoFramework.DependencyInjection.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.TestFramework">
-      <HintPath>..\packages\nanoFramework.TestFramework.2.1.59\lib\nanoFramework.TestFramework.dll</HintPath>
+      <HintPath>..\..\packages\nanoFramework.TestFramework.2.1.59\lib\nanoFramework.TestFramework.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.UnitTestLauncher">
-      <HintPath>..\packages\nanoFramework.TestFramework.2.1.59\lib\nanoFramework.UnitTestLauncher.exe</HintPath>
+      <HintPath>..\..\packages\nanoFramework.TestFramework.2.1.59\lib\nanoFramework.UnitTestLauncher.exe</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -50,7 +50,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\MakoIoT.Device.Services.WiFi\MakoIoT.Device.Services.WiFi.nfproj" />
+    <ProjectReference Include="..\..\src\MakoIoT.Device.Services.WiFi\MakoIoT.Device.Services.WiFi.nfproj" />
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <!-- MANUAL UPDATE HERE -->
