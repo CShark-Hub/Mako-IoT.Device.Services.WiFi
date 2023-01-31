@@ -1,5 +1,5 @@
-﻿using MakoIoT.Device.Services.DependencyInjection;
-using MakoIoT.Device.Services.Interface;
+﻿using MakoIoT.Device.Services.Interface;
+using nanoFramework.DependencyInjection;
 
 namespace MakoIoT.Device.Services.WiFi.Extensions
 {
@@ -7,7 +7,7 @@ namespace MakoIoT.Device.Services.WiFi.Extensions
     {
         public static IDeviceBuilder AddWiFi(this IDeviceBuilder builder)
         {
-            DI.RegisterSingleton(typeof(INetworkProvider), typeof(WiFiNetworkProvider));
+            builder.Services.AddSingleton(typeof(INetworkProvider), typeof(WiFiNetworkProvider));
             return builder;
         }
     }
