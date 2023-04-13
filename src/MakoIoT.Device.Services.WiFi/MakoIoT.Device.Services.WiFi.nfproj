@@ -26,11 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MakoIoT.Device.Services.Configuration.Metadata">
-      <HintPath>..\..\packages\MakoIoT.Device.Services.Configuration.Metadata.1.0.17.15448\lib\MakoIoT.Device.Services.Configuration.Metadata.dll</HintPath>
-    </Reference>
-    <Reference Include="MakoIoT.Device.Services.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\MakoIoT.Device.Services.DependencyInjection.1.0.17.52441\lib\MakoIoT.Device.Services.DependencyInjection.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\packages\MakoIoT.Device.Services.Configuration.Metadata.1.0.18.35226\lib\MakoIoT.Device.Services.Configuration.Metadata.dll</HintPath>
     </Reference>
     <Reference Include="MakoIoT.Device.Services.Interface">
       <HintPath>..\..\packages\MakoIoT.Device.Services.Interface.1.0.23.51280\lib\MakoIoT.Device.Services.Interface.dll</HintPath>
@@ -58,9 +54,8 @@
       <HintPath>..\..\packages\nanoFramework.System.Text.1.2.37\lib\nanoFramework.System.Text.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Device.Wifi, Version=1.5.51.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\..\packages\nanoFramework.System.Device.Wifi.1.5.51\lib\System.Device.Wifi.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Device.Wifi">
+      <HintPath>..\..\packages\nanoFramework.System.Device.Wifi.1.5.54\lib\System.Device.Wifi.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Streams, Version=1.1.38.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\..\packages\nanoFramework.System.IO.Streams.1.1.38\lib\System.IO.Streams.dll</HintPath>
