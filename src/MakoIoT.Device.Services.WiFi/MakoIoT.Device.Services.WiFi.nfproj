@@ -26,11 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MakoIoT.Device.Services.Configuration.Metadata">
-      <HintPath>..\..\packages\MakoIoT.Device.Services.Configuration.Metadata.1.0.17.15448\lib\MakoIoT.Device.Services.Configuration.Metadata.dll</HintPath>
-    </Reference>
-    <Reference Include="MakoIoT.Device.Services.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\MakoIoT.Device.Services.DependencyInjection.1.0.17.52441\lib\MakoIoT.Device.Services.DependencyInjection.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\packages\MakoIoT.Device.Services.Configuration.Metadata.1.0.18.35226\lib\MakoIoT.Device.Services.Configuration.Metadata.dll</HintPath>
     </Reference>
     <Reference Include="MakoIoT.Device.Services.Interface">
       <HintPath>..\..\packages\MakoIoT.Device.Services.Interface.1.0.23.51280\lib\MakoIoT.Device.Services.Interface.dll</HintPath>
