@@ -1,4 +1,5 @@
-# Project readme
+# Mako-IoT.Device.Services.WiFi
+Manages WiFi connections and interfaces (STA, AP).
 
 ## How to manually sync fork
 - Clone repository and navigate into folder
