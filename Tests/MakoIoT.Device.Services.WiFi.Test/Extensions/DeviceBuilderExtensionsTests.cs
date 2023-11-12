@@ -2,7 +2,7 @@
 using MakoIoT.Device.Services.WiFi.Extensions;
 using MakoIoT.Device.Services.WiFi.Test.Mocks;
 using Microsoft.Extensions.Logging;
-using nanoFramework.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using nanoFramework.TestFramework;
 
 namespace MakoIoT.Device.Services.WiFi.Test.Extensions
