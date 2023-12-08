@@ -4,7 +4,6 @@ using System.Net.NetworkInformation;
 using System.Threading;
 using MakoIoT.Device.Services.Interface;
 using MakoIoT.Device.Services.WiFi.Configuration;
-using Microsoft.Extensions.Logging;
 using nanoFramework.Networking;
 
 namespace MakoIoT.Device.Services.WiFi
@@ -12,9 +11,9 @@ namespace MakoIoT.Device.Services.WiFi
     public class WiFiNetworkProvider : INetworkProvider
     {
         private readonly WiFiConfig _wifiConfig;
-        private readonly ILogger _logger;
+        private readonly ILog _logger;
 
-        public WiFiNetworkProvider(IConfigurationService configService, ILogger logger)
+        public WiFiNetworkProvider(IConfigurationService configService, ILog logger)
         {
             _wifiConfig = (WiFiConfig)configService.GetConfigSection(WiFiConfig.SectionName, typeof(WiFiConfig));
             _logger = logger;
@@ -28,17 +27,17 @@ namespace MakoIoT.Device.Services.WiFi
         {
             if (!IsConnected)
             {
-                _logger.LogDebug($"Network status: {WifiNetworkHelper.Status} - connecting");
+                _logger.Trace($"Network status: {WifiNetworkHelper.Status} - connecting");
                 CancellationTokenSource cs = new(_wifiConfig.ConnectionTimeout * 1000);
-                _logger.LogTrace("WifiNetworkHelper.ConnectDhcp");
+                _logger.Trace("WifiNetworkHelper.ConnectDhcp");
                 bool success = WifiNetworkHelper.ConnectDhcp(_wifiConfig.Ssid, _wifiConfig.Password, requiresDateTime: true, token: cs.Token);
-                _logger.LogTrace($"WifiNetworkHelper.ConnectDhcp result: {success}");
+                _logger.Trace($"WifiNetworkHelper.ConnectDhcp result: {success}");
                 if (!success)
                 {
-                    _logger.LogError(WifiNetworkHelper.HelperException, "Network connection error");
+                    _logger.Error( "Network connection error", WifiNetworkHelper.HelperException);
                 }
             }
-            _logger.LogDebug($"Network status: {WifiNetworkHelper.Status}");
+            _logger.Trace($"Network status: {WifiNetworkHelper.Status}");
         }
 
         public void Disconnect()

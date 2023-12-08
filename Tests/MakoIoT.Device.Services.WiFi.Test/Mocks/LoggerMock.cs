@@ -1,19 +1,109 @@
-﻿using Microsoft.Extensions.Logging;
-using System;
+﻿using System;
 using System.Reflection;
+using MakoIoT.Device.Services.Interface;
 
 namespace MakoIoT.Device.Services.WiFi.Test.Mocks
 {
-    internal class LoggerMock : ILogger
+    internal class LoggerMock : ILog
     {
-        public bool IsEnabled(LogLevel logLevel)
+        public void Trace(Exception exception, string message, MethodInfo format)
         {
-            throw new NotImplementedException();
+            
         }
 
-        public void Log(LogLevel logLevel, EventId eventId, string state, Exception exception, MethodInfo format)
+        public void Trace(Exception exception, string message)
         {
-            throw new NotImplementedException();
+            
+        }
+
+        public void Trace(string message)
+        {
+            
+        }
+
+        public void Trace(Exception exception)
+        {
+            
+        }
+
+        public void Information(Exception exception, string message, MethodInfo format)
+        {
+            
+        }
+
+        public void Information(Exception exception, string message)
+        {
+            
+        }
+
+        public void Information(string message)
+        {
+            
+        }
+
+        public void Information(Exception exception)
+        {
+            
+        }
+
+        public void Warning(Exception exception, string message, MethodInfo format)
+        {
+            
+        }
+
+        public void Warning(Exception exception, string message)
+        {
+            
+        }
+
+        public void Warning(string message)
+        {
+            
+        }
+
+        public void Warning(Exception exception)
+        {
+            
+        }
+
+        public void Error(Exception exception, string message, MethodInfo format)
+        {
+            
+        }
+
+        public void Error(string message, Exception exception)
+        {
+            
+        }
+
+        public void Error(string message)
+        {
+            
+        }
+
+        public void Error(Exception exception)
+        {
+            
+        }
+
+        public void Critical(Exception exception, string message, MethodInfo format)
+        {
+            
+        }
+
+        public void Critical(Exception exception, string message)
+        {
+            
+        }
+
+        public void Critical(string message)
+        {
+            
+        }
+
+        public void Critical(Exception exception)
+        {
+            
         }
     }
 }
