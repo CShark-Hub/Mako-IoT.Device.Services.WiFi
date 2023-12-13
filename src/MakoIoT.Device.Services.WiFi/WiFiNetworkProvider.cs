@@ -1,6 +1,4 @@
-﻿using System;
-using System.Device.Wifi;
-using System.Net.NetworkInformation;
+﻿using System.Net.NetworkInformation;
 using System.Threading;
 using MakoIoT.Device.Services.Interface;
 using MakoIoT.Device.Services.WiFi.Configuration;
@@ -29,7 +27,6 @@ namespace MakoIoT.Device.Services.WiFi
             {
                 _logger.Trace($"Network status: {WifiNetworkHelper.Status} - connecting");
                 CancellationTokenSource cs = new(_wifiConfig.ConnectionTimeout * 1000);
-                _logger.Trace("WifiNetworkHelper.ConnectDhcp");
                 bool success = WifiNetworkHelper.ConnectDhcp(_wifiConfig.Ssid, _wifiConfig.Password, requiresDateTime: true, token: cs.Token);
                 _logger.Trace($"WifiNetworkHelper.ConnectDhcp result: {success}");
                 if (!success)
@@ -42,35 +39,7 @@ namespace MakoIoT.Device.Services.WiFi
 
         public void Disconnect()
         {
-            
-        }
-
-        private void EnableWiFi()
-        {
-            Wireless80211Configuration wconf = GetConfiguration();
-            wconf.Options = Wireless80211Configuration.ConfigurationOptions.Enable;
-            wconf.SaveConfiguration();
-        }
-
-        private Wireless80211Configuration GetConfiguration()
-        {
-            NetworkInterface ni = GetInterface();
-            return Wireless80211Configuration.GetAllWireless80211Configurations()[ni.SpecificConfigId];
-        }
-
-        private NetworkInterface GetInterface()
-        {
-            NetworkInterface[] Interfaces = NetworkInterface.GetAllNetworkInterfaces();
-
-            // Find WirelessAP interface
-            foreach (NetworkInterface ni in Interfaces)
-            {
-                if (ni.NetworkInterfaceType == NetworkInterfaceType.Wireless80211)
-                {
-                    return ni;
-                }
-            }
-            return null;
+            WifiNetworkHelper.Disconnect();   
         }
     }
 }
