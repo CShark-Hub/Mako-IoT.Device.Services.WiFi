@@ -29,8 +29,8 @@ namespace MakoIoT.Device.Services.WiFi
                 return;
             }
             
-            _logger.Trace($"Network status: {WifiNetworkHelper.Status} - connecting");
             var configSection = (WiFiConfig)_configService.GetConfigSection(WiFiConfig.SectionName, typeof(WiFiConfig));
+            _logger.Trace($"Network status: {WifiNetworkHelper.Status} - connecting to {configSection.Ssid}");
             var cs = new CancellationTokenSource(configSection.ConnectionTimeout * 1000);
             var success = WifiNetworkHelper.ConnectDhcp(configSection.Ssid, configSection.Password, requiresDateTime: true, token: cs.Token);
             _logger.Trace($"WifiNetworkHelper.ConnectDhcp result: {success}");
