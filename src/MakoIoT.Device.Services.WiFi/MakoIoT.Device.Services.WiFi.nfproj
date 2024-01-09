@@ -22,6 +22,7 @@
     <Compile Include="Configuration\Metadata.cs" />
     <Compile Include="Configuration\WiFiConfig.cs" />
     <Compile Include="Extensions\DeviceBuilderExtension.cs" />
+    <Compile Include="DelayCancellationTokenSource.cs" />
     <Compile Include="WiFiNetworkProvider.cs" />
   </ItemGroup>
   <ItemGroup>

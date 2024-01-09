@@ -1,5 +1,5 @@
-﻿using System.Net.NetworkInformation;
-using System.Threading;
+﻿using System;
+using System.Net.NetworkInformation;
 using MakoIoT.Device.Services.Interface;
 using MakoIoT.Device.Services.WiFi.Configuration;
 using nanoFramework.Networking;
@@ -30,13 +30,22 @@ namespace MakoIoT.Device.Services.WiFi
             }
             
             var configSection = (WiFiConfig)_configService.GetConfigSection(WiFiConfig.SectionName, typeof(WiFiConfig));
+            if (String.IsNullOrEmpty(configSection.Ssid))
+            {
+                _logger.Error("SSID not configured");
+                return;
+            }
+
             _logger.Trace($"Network status: {WifiNetworkHelper.Status} - connecting to {configSection.Ssid}");
-            var cs = new CancellationTokenSource(configSection.ConnectionTimeout * 1000);
+
+            var cs = new DelayCancellationTokenSource(configSection.ConnectionTimeout * 1000);
+
             var success = WifiNetworkHelper.ConnectDhcp(configSection.Ssid, configSection.Password, requiresDateTime: true, token: cs.Token);
             _logger.Trace($"WifiNetworkHelper.ConnectDhcp result: {success}");
+
             if (!success)
             {
-                _logger.Error( "Network connection error", WifiNetworkHelper.HelperException);
+                _logger.Error( $"Network connection error {WifiNetworkHelper.Status}", WifiNetworkHelper.HelperException);
             }
         }
 
